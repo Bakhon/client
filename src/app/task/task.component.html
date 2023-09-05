@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h2 class="h2">Список задач</h2>
+      <button class="btn btn-sm btn-success" routerLink="">Add</button>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered" style="width: 100%;">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Наименование</th>
+            <th scope="col">Описание</th>
+            <th scope="col">Статус</th>
+            <th class="text-center" scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of tasks">
+            <th scope="row">{{task.id}}</th>
+            <td>{{task.title}}</td>
+            <td>{{task.description}}</td>
+            <td>{{task.status}}</td>
+            <td class="text-center">
+              <button class="btn btn-sm btn-success" routerLink="/task/{{task.id}}">View</button>
+              <button class="btn btn-sm btn-primary" routerLink="/task/edit/{{task.id}}">Edit</button>
+              <button class="btn btn-sm btn-danger" (click)="delete(task.id)">Delete</button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

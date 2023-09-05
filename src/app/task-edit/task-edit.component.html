@@ -1,0 +1,22 @@
+<div class="container">
+    <h3>Просмотровая форма</h3>
+    <div class="card-body">
+    <form >
+        <div >
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Наименование</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" value="{{tasks[1]}}">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Описание</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1"  rows="3">{{ tasks[2]}}</textarea>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Статус</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">{{tasks[3]}}</textarea>
+              </div>
+        </div>
+        <button class="btn btn-xl btn-success" (click)="save()">Save</button>
+    </form>
+   </div>
+</div>
