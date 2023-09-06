@@ -27,7 +27,7 @@ export class TaskCreateComponent {
 
   submit(){
       this.taskService.createTask(this.form.value).subscribe((res:any) => {
-            console.log('Post created successfully!');
+            console.log('Task created successfully!');
             //this.goToTasks()
             })
   }
