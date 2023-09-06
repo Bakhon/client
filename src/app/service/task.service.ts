@@ -5,10 +5,10 @@ import { Observable } from 'rxjs';
 
 
 interface Task {
-  id: number,
+  id?: number,
   name: string,
   description: string,
-  status: string,
+  status?: string,
   created_at?: string
 }
 @Injectable()
@@ -31,9 +31,13 @@ export class TaskService {
     return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
 
-  updateTask(id: number, task: any[]): Observable<Object>{
+  updateTask(id: number, task: Task[]): Observable<any>{
     console.log('task', task)
     return this.httpClient.put(`${this.baseURL}/${id}`, task);
+  }
+
+  createTask(task: Task): Observable<any>{
+    return this.httpClient.post(`${this.baseURL}`, task);
   }
 
 }

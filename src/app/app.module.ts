@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http'
 import { TaskService } from './service/task.service';
 import { TaskViewComponent } from './task-view/task-view.component';
 import { TaskEditComponent } from './task-edit/task-edit.component';
+import { TaskCreateComponent } from './task-create/task-create.component';
+import { FormsModule, ReactiveFormsModule  }   from '@angular/forms';
 
 
 @NgModule({
@@ -16,13 +18,16 @@ import { TaskEditComponent } from './task-edit/task-edit.component';
     AppComponent,
     TaskComponent,
     TaskViewComponent,
-    TaskEditComponent
+    TaskEditComponent,
+    TaskCreateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     TaskService
